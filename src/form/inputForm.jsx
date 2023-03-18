@@ -14,8 +14,13 @@ const InputForm = (props) => {
   };
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    console.log(enteredName, enteredAge);
+    if (enteredName.trim().length === 0) {
+      errorHandler("Please enter a name");
+    }
     props.onAddUser(enteredName, enteredAge);
+  };
+  const errorHandler = (error) => {
+    console.log(error);
   };
   return (
     <form className="form" onSubmit={formSubmitHandler}>

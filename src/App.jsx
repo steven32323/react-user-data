@@ -1,6 +1,7 @@
-import InputForm from "./form/inputForm";
+import InputForm from "./form/InputForm";
 import { useState } from "react";
 import UserList from "./form/UserList";
+import Card from "./assets/UI/Card";
 
 function App() {
   const [userData, setUserData] = useState([
@@ -17,12 +18,16 @@ function App() {
     });
   };
   return (
-    <div>
-      <InputForm onAddUser={addUserHandler} />
+    <>
+      <Card>
+        <div>
+          <InputForm onAddUser={addUserHandler} />
+        </div>
+      </Card>
       <section>
         <UserList users={userData} />
       </section>
-    </div>
+    </>
   );
 }
 

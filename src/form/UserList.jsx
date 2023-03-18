@@ -1,8 +1,9 @@
 import FormItem from "./FormItem";
+import "./UserList.css";
 
 const UserList = (props) => {
   return (
-    <ul>
+    <ul className="list-container">
       {props.users.map((user) => (
         <FormItem name={user.name} age={user.age} key={user.id} />
       ))}

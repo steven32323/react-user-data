@@ -1,3 +1,22 @@
-/* .form {
-  margin-left: 50%;
-} */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input[type="text"],
+input[type="submit"] {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+input[type="submit"] {
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+input[type="submit"]:hover {
+  background-color: #45a049;
+}

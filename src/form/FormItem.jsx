@@ -1,7 +1,9 @@
+import "./UserList";
+
 const FormItem = (props) => {
   return (
-    <li>
-      Name: {props.name} Age: {props.age}
+    <li className="list-item">
+      Name: {props.name}, Age: {props.age}
     </li>
   );
 };

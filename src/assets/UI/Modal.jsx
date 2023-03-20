@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import "./Modal.css";
+
 const Modal = (props) => {
   const [showModal, setShowModal] = useState(true);
 
@@ -12,8 +14,8 @@ const Modal = (props) => {
       {!showModal ? (
         ""
       ) : (
-        <div className="overlay">
-          <div className="Modal">
+        <div className="overlay" onClick={closeModalHandler}>
+          <div className="modal">
             Invalid Input
             <div className="modal-content">{props.error}</div>
             <button className="close" onClick={closeModalHandler}>

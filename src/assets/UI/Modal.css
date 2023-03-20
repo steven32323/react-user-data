@@ -1,6 +1,8 @@
 /* Modal container */
 .modal {
-  display: none; /* Initially hidden */
+  display: flex; /* Initially hidden */
+  flex-direction: column;
+  align-items: center;
   position: fixed;
   z-index: 1000;
   left: 0;

@@ -1,6 +1,5 @@
 import { useState } from "react";
 import "./InputForm.css";
-import Modal from "../assets/UI/Modal";
 import "../assets/UI/Modal.css";
 
 const InputForm = (props) => {
@@ -26,27 +25,37 @@ const InputForm = (props) => {
       return;
     }
     props.onAddUser(enteredName, enteredAge);
+    setEnteredName(""); // Reset the input fields
+    setEnteredAge("");
   };
   const errorHandler = (error) => {
     setError(error);
+    props.onError(error);
   };
   return (
     <>
-      {error !== null ? (
-        <Modal error={error} setError={setError} />
-      ) : (
-        <form className="form" onSubmit={formSubmitHandler}>
-          <div>
-            <label htmlFor="username">Name: </label>
-            <input id="name" type="text" onChange={nameChangeHandler} />
-          </div>
-          <div>
-            <label htmlFor="userage">Age:</label>
-            <input id="age" type="number" onChange={ageChangeHandler} />
-          </div>
-          <button type="submit">Add User</button>
-        </form>
-      )}
+      {/* {error !== null && <Modal error={error} setError={setError} />} */}
+      <form className="form" onSubmit={formSubmitHandler}>
+        <div>
+          <label htmlFor="username">Name: </label>
+          <input
+            id="name"
+            type="text"
+            value={enteredName}
+            onChange={nameChangeHandler}
+          />
+        </div>
+        <div>
+          <label htmlFor="userage">Age:</label>
+          <input
+            id="age"
+            type="number"
+            value={enteredAge}
+            onChange={ageChangeHandler}
+          />
+        </div>
+        <button type="submit">Add User</button>
+      </form>
     </>
   );
 };

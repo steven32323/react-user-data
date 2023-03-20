@@ -3,7 +3,7 @@ import "./UserList";
 const FormItem = (props) => {
   return (
     <li className="list-item">
-      Name: {props.name}, Age: {props.age}
+      Name: {props.name} ({props.age} years old)
     </li>
   );
 };

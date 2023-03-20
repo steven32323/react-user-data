@@ -25,9 +25,9 @@ function App() {
           <InputForm onAddUser={addUserHandler} />
         </div>
       </Card>
-      <section>
+      <Card>
         <UserList users={userData} />
-      </section>
+      </Card>
     </>
   );
 }

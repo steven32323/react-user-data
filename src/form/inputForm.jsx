@@ -22,7 +22,7 @@ const InputForm = (props) => {
       return;
     }
     if (enteredAge.trim().length === 0) {
-      errorHandler("Please enter an age!");
+      errorHandler("Please enter an age!  ");
       return;
     }
     props.onAddUser(enteredName, enteredAge);
@@ -37,14 +37,14 @@ const InputForm = (props) => {
       ) : (
         <form className="form" onSubmit={formSubmitHandler}>
           <div>
-            <label>Name: </label>
-            <input type="text" onChange={nameChangeHandler} />
+            <label htmlFor="username">Name: </label>
+            <input id="name" type="text" onChange={nameChangeHandler} />
           </div>
           <div>
-            <label>Age:</label>
-            <input type="number" onChange={ageChangeHandler} />
+            <label htmlFor="userage">Age:</label>
+            <input id="age" type="number" onChange={ageChangeHandler} />
           </div>
-          <button type="submit">Submit</button>
+          <button type="submit">Add User</button>
         </form>
       )}
     </>

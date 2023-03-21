@@ -14,6 +14,7 @@
   font-size: 14px;
   display: flex;
   justify-content: center;
+  color: black;
 }
 .list-item:last-child {
   border-bottom: none;
